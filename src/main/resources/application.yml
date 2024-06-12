@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: anime-list
+  autoconfigure:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/anime
+    username: postgres
+    password: 3817!

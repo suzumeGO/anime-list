@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список аниме - Авторизация</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .card {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+        .card-header {
+            background-color: #2575fc;
+            border-bottom: none;
+        }
+        .btn-primary {
+            background-color: #2575fc;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #1a5dbc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Добро пожаловать в Список аниме</h1>
+    <p>Пожалуйста, войдите в свою учетную запись</p>
+    <div class="card">
+        <div class="card-header text-center">
+            <h4>Авторизация</h4>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="email">Email адрес</label>
+                    <input type="email" class="form-control" id="email" placeholder="Введите email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" class="form-control" id="password" placeholder="Введите пароль">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Войти</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
