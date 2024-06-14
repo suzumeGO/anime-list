@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +36,13 @@
         .btn-primary:hover {
             background-color: #1a5dbc;
         }
+        .form-group label {
+            color: black;
+        }
+        .error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -47,7 +54,7 @@
             <h4>Авторизация</h4>
         </div>
         <div class="card-body">
-            <form action="@{/login}" method="post">
+            <form action="/login" method="post">
                 <div class="form-group">
                     <label for="username">Имя пользователя</label>
                     <input type="text" class="form-control" id="username" name="username" placeholder="Введите имя пользователя" required>
