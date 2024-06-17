@@ -1,4 +1,4 @@
-package com.registration.anime_list;
+package com.registration.anime_list.Entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

@@ -1,6 +1,6 @@
 package com.registration.anime_list.models;
 
-import com.registration.anime_list.User;
+import com.registration.anime_list.Entity.User;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;

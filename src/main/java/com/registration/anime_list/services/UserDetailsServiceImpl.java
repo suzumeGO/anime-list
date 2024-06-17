@@ -1,9 +1,8 @@
 package com.registration.anime_list.services;
 
-import com.registration.anime_list.User;
+import com.registration.anime_list.Entity.User;
 import com.registration.anime_list.repos.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

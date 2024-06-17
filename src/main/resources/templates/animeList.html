@@ -29,6 +29,10 @@
         .btn-primary:hover {
             background-color: #1a5dbc;
         }
+        .anime-image {
+            width: 50px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -40,14 +44,22 @@
             <thead class="thead-light">
             <tr>
                 <th>#</th>
+                <th>Картинка</th>
                 <th>Название</th>
+                <th>Эпизоды</th>
+                <th>Год</th>
+                <th>Тип</th>
                 <th>Добавить</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="anime, stat : ${animeList}">
-                <td th:text="${stat.count}">1</td>
+                <td th:text="${stat.index + 1}">1</td>
+                <td><img th:src="${anime.smallImageUrl}" th:alt="${anime.title}" class="anime-image"></td>
                 <td th:text="${anime.title}">Название</td>
+                <td th:text="${anime.episodes}">Эпизоды</td>
+                <td th:text="${anime.year}">Год</td>
+                <td th:text="${anime.type}">Тип</td>
                 <td>
                     <input type="checkbox" name="selectedAnime" th:value="${anime.title}">
                 </td>

@@ -1,5 +1,6 @@
 package com.registration.anime_list;
 
+import com.registration.anime_list.Entity.User;
 import com.registration.anime_list.repos.UserRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
