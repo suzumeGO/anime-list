@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Entity(name = "users")
 @Data
@@ -27,6 +28,11 @@ public class User implements UserDetails {
     private final String secondName;
     private final String patronymic;
     private final String email;
+
+    @OneToMany(fetch = FetchType.LAZY,
+            mappedBy = "user",
+            cascade = CascadeType.ALL)
+    private Set<UserAnime> userAnime;
 
 
     @Override
