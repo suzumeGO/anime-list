@@ -16,24 +16,45 @@ import java.util.Set;
 @Entity(name = "users")
 @Data
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
-@RequiredArgsConstructor
 public class User implements UserDetails {
+
+    public User(String username, String password, String firstName, String secondName, String patronymic, String email) {
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.patronymic = patronymic;
+        this.email = email;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_id_seq")
     @SequenceGenerator(name = "users_id_seq", sequenceName = "users_id_seq", allocationSize = 1)
     private Long id;
-    private final String username;
-    private final String password;
-    private final String firstName;
-    private final String secondName;
-    private final String patronymic;
-    private final String email;
+    private String username;
+    private String password;
+    private String firstName;
+    private String secondName;
+    private String patronymic;
+    private String email;
 
     @OneToMany(fetch = FetchType.LAZY,
             mappedBy = "user",
             cascade = CascadeType.ALL)
     private Set<UserAnime> userAnime;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", patronymic='" + patronymic + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

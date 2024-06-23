@@ -37,14 +37,13 @@ public class MainController {
 
     @PostMapping("/addAnime")
     @PreAuthorize("hasRole('USER')")
-    public void addAnime(@RequestParam("selectedAnime") String selectedAnime, @AuthenticationPrincipal UserDetails userDetails) {
+    public String addAnime(@RequestParam("selectedAnime") String selectedAnime, @AuthenticationPrincipal UserDetails userDetails) {
         String[] parts = selectedAnime.split(":");
         Long animeId = Long.parseLong(parts[0]);
         String status = parts[1];
         Anime anime = animeService.findAnimeById(animeId).get();
-        log.info("Anime: " + anime.getId() + " " + anime.getTitle() + " " + status);
-        //log.info(userDetails.toString());
         animeService.saveAnimeToUser((User) userDetails, anime, status);
+        return "redirect:/anime";
     }
 
 }

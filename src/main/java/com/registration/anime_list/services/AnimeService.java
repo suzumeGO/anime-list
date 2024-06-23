@@ -26,10 +26,7 @@ public class AnimeService {
 
     public void saveAnimeToUser(User user, Anime anime, String status) {
         UserAnimeId userAnimeId = new UserAnimeId(user.getId(), anime.getId());
-        UserAnime userAnime = new UserAnime();
-        userAnime.setAnime(anime);
-        userAnime.setUserAnimeId(userAnimeId);
-        userAnime.setStatus(status);
+        UserAnime userAnime = new UserAnime(userAnimeId, status, user, anime);
         userTitlesRepository.save(userAnime);
     }
 }
